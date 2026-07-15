@@ -1,0 +1,240 @@
+/* Luca Guerneri — teaching materials
+   House style: navy / plum, Georgia display, Arial body. */
+
+:root {
+  --ink:    #16233F;
+  --plum:   #6B2D5B;
+  --paper:  #F3F3F0;
+  --card:   #FFFFFF;
+  --rule:   #D6D5CE;
+  --muted:  #5C6274;
+  --focus:  #B8860B;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- masthead ---------- */
+
+.masthead {
+  border-bottom: 2px solid var(--ink);
+  padding: 44px 0 20px;
+  margin-bottom: 44px;
+}
+
+.masthead h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  font-size: 2.1rem;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.masthead h1 a { color: inherit; text-decoration: none; }
+
+.masthead p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--plum);
+  margin: 0 0 10px;
+}
+
+/* ---------- home: year cards ---------- */
+
+.years {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 56px;
+  display: grid;
+  gap: 14px;
+}
+
+.years a {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-left: 5px solid var(--plum);
+  padding: 22px 24px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-left-color .15s, transform .15s;
+}
+
+.years a:hover,
+.years a:focus-visible {
+  border-left-color: var(--ink);
+  transform: translateX(3px);
+}
+
+.years h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 1.35rem;
+  margin: 0 0 4px;
+}
+
+.years span {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+/* ---------- chronology spine ---------- */
+
+.spine {
+  border-left: 2px solid var(--rule);
+  margin: 0 0 56px;
+  padding: 0;
+  list-style: none;
+}
+
+.unit {
+  position: relative;
+  padding: 0 0 40px 30px;
+}
+
+.unit::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 9px;
+  width: 10px;
+  height: 10px;
+  background: var(--plum);
+  border-radius: 50%;
+}
+
+.date {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.unit h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 1.3rem;
+  margin: 0 0 6px;
+}
+
+.unit > p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+/* ---------- file + link lists ---------- */
+
+.files, .links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.files li { border-bottom: 1px solid var(--rule); }
+.files li:first-child { border-top: 1px solid var(--rule); }
+
+.files a {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 2px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.files a:hover, .files a:focus-visible { background: rgba(107,45,91,.06); }
+
+.files .kind {
+  color: var(--muted);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  align-self: center;
+}
+
+.links {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dotted var(--rule);
+}
+
+.links p {
+  margin: 0 0 6px;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--plum);
+}
+
+.links li { font-size: 0.9rem; margin-bottom: 4px; }
+.links a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule); }
+.links a:hover { text-decoration-color: var(--plum); }
+
+/* ---------- misc ---------- */
+
+.back {
+  display: inline-block;
+  margin-bottom: 28px;
+  font-size: 0.86rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+.back:hover { color: var(--plum); }
+
+.intro {
+  font-family: Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin: 0 0 40px;
+  max-width: 60ch;
+}
+
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 22px 0 48px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .masthead h1 { font-size: 1.6rem; }
+  .files a { flex-direction: column; gap: 2px; }
+  .files .kind { align-self: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
